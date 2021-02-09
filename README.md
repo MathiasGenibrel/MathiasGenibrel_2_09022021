@@ -29,4 +29,4 @@ Tout le projet doit ce faire uniquement en HTML et CSS sans aucun framework, ave
 - Un lien vers votre repository GitHub ou GitLab.
     - Vous devez versionner votre code sur GitHub ou GitLab.
     - Votre repository doit être accessible.
-- Un lien vers votre page web hébergée en ligne sur GitHub Pages ou GitLab Pages, pour présenter votre maquette. 
+- Un lien vers votre page web hébergée en ligne sur GitHub Pages ou GitLab Pages, pour présenter votre maquette.
