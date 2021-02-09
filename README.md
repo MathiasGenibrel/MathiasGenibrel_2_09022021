@@ -1,4 +1,4 @@
-![Logo Réservia](/assets/maquette/logo/Reservia.svg)
+![Logo Réservia](/assets/maquette/logo/Reservia@3x.png)
 # Reservia
 Création d'une interface web à partir d'une maquette :
 ![Maquette Web](/assets/maquette/Desktop.png)
