@@ -17,13 +17,13 @@ Tout le projet doit ce faire uniquement en HTML et CSS sans aucun framework, ave
 - Les icônes proviennent de Font Awesome
 - Les couleurs de la charte sont :
     - bleu #0065FC
-    - Version plus clair #DEEBFF
+    - bleu clair #DEEBFF
     - fond gris #F2F2F2
-- Police du site Raleway
+- Police à utilisé : Raleway
 - Utilisation de balise sémantique.
 - Compatibilité avec les dernières version de Chrome et Firefox
-- Organisationdu dossier de rendu
-- Versionner le code
+- Organisation du dossier de rendu
+- Versionner le code à l'aide de git
 
 ## Livrables
 - Un lien vers votre repository GitHub ou GitLab.
