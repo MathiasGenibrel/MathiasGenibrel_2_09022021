@@ -1,0 +1,51 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+}
+nav {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+nav a {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 80px;
+    height: 100%;
+    border-top: white solid 2px;
+    color: #0065FC;
+}
+nav a:hover {
+    border-top: #0065FC solid 2px;
+}
+main {
+    margin: 0 2% 0 2%;
+    line-height: 30px;
+}
+.research {
+    background-color: #F2F2F2;
+    width: fit-content;
+    padding-left: 1rem;
+    border-radius: 10px 0 0 10px;
+}
+.btnResearch {
+    color: white;
+    font-weight: bold;
+    background-color: #0056fc;
+    border: transparent;
+    border-radius: 0 12px 12px 0;
+    padding: 10px;
+}
+.inResearch {
+    border: #F2F2F2 solid 1px;
+    border-right: transparent;
+    font-weight: bold;
+    padding: 10px;
+}

@@ -1,14 +1,9 @@
-<!--
-    Transformation maquette Réservia, Projet #2 OpenClassrooms
-    Auteurs : GENIBREL Mathias
-    Date : 10/02/2021
--->
 <!DOCTYPE html>
 <html>
     <head>
         <title>Reservia</title>
         <link rel="icon" type="image/svg" href="assets/images/logo/Reservia.svg">
-        <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
+        <style> @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); </style>
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
@@ -21,18 +16,17 @@
             </nav>
         </header>
         <main>
-            <!--
-                Section recherche et Filtres
-            -->
             <section>
-                <div> <!--Recherche-->
+                <div>
                     <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
                     <p>En plein centre ville ou en pleine nature</p>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <input type="search" placeholder="Marseille, France">
-                    <button>Rechercher</button>
+                    <div class="research">
+                        <i class="fas fa-map-marker-alt" data-fa-transform="shrink-8 right-15" style="background:#F2F2F2"></i>
+                        <input class="inResearch" type="search" placeholder="Marseille, France">
+                        <button class="btnResearch">Rechercher</button>
+                    </div>
                 </div>
-                <div> <!-- Filtres -->
+                <div>
                     <h2>Filtres</h2>
                     <input type="checkbox" name="Economique" id="Economique">
                     <input type="checkbox" name="Familial" id="Familial">
@@ -43,12 +37,10 @@
                     <p>Plus de 500 logements sont disponibles dans cette ville</p>
                 </div>
             </section>
-            <!--
-                Section hébergements
-            -->
             <section>
-                <aside> <!-- Populaire -->
+                <aside>
                     <h2>Les plus populaires</h2>
+                    <i class="fas fa-chart-line"></i>
                     <article>
                         <img src="" alt="">
                         <h3>Hôtel Le soleil du matin</h3>
@@ -80,7 +72,7 @@
                         <i class="fas fa-star"></i>
                     </article>
                 </aside>
-                <article> <!-- Hébergements -->
+                <article>
                     <h2>Hébergements à Marseille</h2>
                     <article>
                         <img src="" alt="">
@@ -145,9 +137,6 @@
                     <a href="#"><h3>Afficher plus</h3></a>
                 </article>
             </section>
-            <!--
-                Activités
-            -->
             <section>
                 <h2>Activités à Marseille</h2>
                 <article>
@@ -178,7 +167,7 @@
         </main>
         <footer>
             <div>
-                <table> <!-- A propos -->
+                <table>
                     <tr>
                         <th>A propos</th>
                     </tr>
@@ -192,7 +181,7 @@
                         <td>Données et confidentialité</td>
                     </tr>
                 </table>
-                <table> <!-- Nos hebergements -->
+                <table>
                     <tr>
                         <th>Nos hébergements</th>
                     </tr>
@@ -203,7 +192,7 @@
                         <td>Soumettre votre hôtel</td>
                     </tr>
                 </table>
-                <table> <!-- Assistance -->
+                <table>
                     <tr>
                         <th>Assiatance</th>
                     </tr>
@@ -216,5 +205,6 @@
                 </table>
             </div>
         </footer>
+        <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
     </body>
 </html>
