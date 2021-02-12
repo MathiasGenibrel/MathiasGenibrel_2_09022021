@@ -8,9 +8,9 @@
         <header>
             <img src="assets/images/logo/Reservia.svg" alt="Reservia logo">
             <nav class="userNavigation">
-                <a href="#">Hébergements</a>
-                <a href="#">Activités</a>
-                <a href="#">S'inscrire</a>
+                <a class="select" href="#">Hébergements</a>
+                <a class="select" href="#">Activités</a>
+                <a class="sign" href="#">S'inscrire</a>
             </nav>
         </header>
         <main>
@@ -18,21 +18,46 @@
                 <div class="userResearch">
                     <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
                     <p>En plein centre ville ou en pleine nature</p>
-                    <div class = research>
-                        <i class="fas fa-map-marker-alt"></i>
+                    <div class = "research">
+                        <i class="fas fa-map-marker-alt" data-fa-transform="shrink-12 left-6"></i>
                         <input class="inResearch" type="search" placeholder="Marseille, France">
                         <button class="btnResearch">Rechercher</button>
                     </div>
                 </div>
                 <div class="userFilter">
-                    <h2>Filtres</h2>
-                    <input class="Filter" type="checkbox" name="Economique" id="Economique">
-                    <input class="Filter" type="checkbox" name="Familial" id="Familial">
-                    <input class="Filter" type="checkbox" name="Romantique" id="Romantique">
-                    <input class="Filter" type="checkbox" name="Animaux" id="Animaux">
-                    <br>
-                    <i class="fas fa-info"></i>
-                    <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                    <h3>Filtres</h3>
+                    <label class="switchEco">
+                        <p class="textFilter">Économique</p>
+                        <input class="eco" type="checkbox">
+                        <span class="sliderEco">
+                            <p class="textFilter textFilterAfter">Économique</p>
+                        </span>
+                    </label>
+                    <label class="switchFam">
+                        <p class="textFilter">Familial</p>
+                        <input class="fam" type="checkbox">
+                        <span class="sliderFam">
+                            <p class="textFilter textFilterAfter">Familial</p>
+                        </span>
+                    </label>
+                    <label class="switchRom">
+                        <p class="textFilter">Romantique</p>
+                        <input class="rom" type="checkbox">
+                        <span class="sliderRom">
+                            <p class="textFilter textFilterAfter">Romantique</p>
+                        </span>
+                    </label>
+                    <label class="switchAni">
+                        <p class="textFilter">Animaux autorisés</p>
+                        <input class="ani" type="checkbox">
+                        <span class="sliderAni">
+                            <p class="textFilter textFilterAfter">Animaux autorisés</p>
+                        </span>
+                    </label>
+                    <div class="userInfo">
+                        <i class="fas fa-info"></i>
+                        <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                    </div>
                 </div>
             </section>
             <section class="popular">
