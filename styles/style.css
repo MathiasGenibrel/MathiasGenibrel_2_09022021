@@ -1,0 +1,242 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 2rem 0 2rem;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+}
+.sign {
+    font-weight: bold;
+    color: #0056fc;
+}
+.userNavigation {
+    width: 30rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.userNavigation > a {
+    text-decoration: none;
+    height: 100%;
+    line-height: 4rem;
+    text-align: center;
+    flex-grow: 1;
+}
+.userNavigation > .select:hover {
+    border-top: solid 0.1rem #0056fc;
+    color: #0056fc;
+}
+.research {
+    background-color: #F2F2F2;
+    width: fit-content;
+    padding-left: 1.5rem;
+    border-radius: .9rem 0 0 .9rem;
+}
+.btnResearch {
+    color: white;
+    font-weight: bold;
+    background-color: #0056fc;
+    border: transparent;
+    border-radius: 0 .9rem .9rem 0;
+    padding: .7rem;
+}
+.inResearch {
+    border: #F2F2F2 solid 1px;
+    border-right: transparent;
+    font-weight: bold;
+    padding: .7rem;
+}
+.userFilter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.userFilter > h3 {
+    float: left;
+}
+/*Filtre switch toggle Eco*/
+.switchEco {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 10rem;
+    height: 2.4rem;
+}
+.textFilter {
+    font-weight: bold;
+    position: absolute;
+    right: 1rem;
+    line-height: .6rem;
+    user-select: none;
+}
+.eco {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderEco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderEco::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.1rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.textFilterAfter {
+    left: 1rem;
+    top: -.1rem;
+}
+.eco:checked + .sliderEco {
+    background-color: #0056fc;
+    color: white;
+}
+.eco:checked + .sliderEco::before {
+    transform: translateX(7.5rem);
+}
+/*Filtre switch toggle Fam*/
+.switchFam {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 8rem;
+    height: 2.4rem;
+}
+.fam {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderFam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderFam::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.1rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.fam:checked + .sliderFam {
+    background-color: #0056fc;
+    color: white;
+}
+.fam:checked + .sliderFam::before {
+    transform: translateX(5.7rem);
+}
+/*Filtre switch toggle Rom*/
+.switchRom {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 10rem;
+    height: 2.4rem;
+}
+.rom {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderRom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderRom::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.1rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.rom:checked + .sliderRom {
+    background-color: #0056fc;
+    color: white;
+}
+.rom:checked + .sliderRom::before {
+    transform: translateX(7.5rem);
+}
+/*Filtre switch toggle Ani*/
+.switchAni {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 13.5rem;
+    height: 2.4rem;
+}
+.ani {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderAni {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderAni::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.1rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.ani:checked + .sliderAni {
+    background-color: #0056fc;
+    color: white;
+}
+.ani:checked + .sliderAni::before {
+    transform: translateX(11rem);
+}
+.userInfo {
+    clear: both;
+}
