@@ -146,10 +146,6 @@ header {
     border-radius: 50%;
     transition: .2s;
 }
-.textFilterAfter {
-    left: 1rem;
-    top: -.1rem;
-}
 .fam:checked + .sliderFam {
     background-color: #0056fc;
     color: white;
@@ -192,10 +188,6 @@ header {
     border-radius: 50%;
     transition: .2s;
 }
-.textFilterAfter {
-    left: 1rem;
-    top: -.1rem;
-}
 .rom:checked + .sliderRom {
     background-color: #0056fc;
     color: white;
@@ -237,10 +229,6 @@ header {
     background-color: #DEEBFF;
     border-radius: 50%;
     transition: .2s;
-}
-.textFilterAfter {
-    left: 1rem;
-    top: -.1rem;
 }
 .ani:checked + .sliderAni {
     background-color: #0056fc;
