@@ -14,7 +14,7 @@ header {
     color: #0056fc;
 }
 .userNavigation {
-    width: 30rem;
+    width: 25rem;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -27,33 +27,40 @@ header {
     flex-grow: 1;
 }
 .userNavigation > .select:hover {
-    border-top: solid 0.1rem #0056fc;
+    border-top: solid 0.15rem #0056fc;
     color: #0056fc;
 }
 .research {
     background-color: #F2F2F2;
     width: fit-content;
+    padding: 0;
     padding-left: 1.5rem;
-    border-radius: .9rem 0 0 .9rem;
+    border-radius: 1rem;
 }
 .btnResearch {
     color: white;
     font-weight: bold;
     background-color: #0056fc;
     border: transparent;
-    border-radius: 0 .9rem .9rem 0;
-    padding: .7rem;
+    border-radius: 0 1rem 1rem 0;
+    padding: .75rem;
+    position: absolute;
+    margin: 0;
 }
 .inResearch {
     border: #F2F2F2 solid 1px;
     border-right: transparent;
     font-weight: bold;
+    width: 18rem;
     padding: .7rem;
 }
 .userFilter {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
+    --heightSwitch: 2.4rem;
+    max-width: 58rem;
 }
 .userFilter > h3 {
     float: left;
@@ -64,7 +71,7 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 10rem;
-    height: 2.4rem;
+    height: var(--heightSwitch);
 }
 .textFilter {
     font-weight: bold;
@@ -117,7 +124,7 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 8rem;
-    height: 2.4rem;
+    height: var(--heightSwitch);
 }
 .fam {
     opacity: 0;
@@ -159,7 +166,7 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 10rem;
-    height: 2.4rem;
+    height: var(--heightSwitch);
 }
 .rom {
     opacity: 0;
@@ -201,7 +208,7 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 13.5rem;
-    height: 2.4rem;
+    height: var(--heightSwitch);
 }
 .ani {
     opacity: 0;
@@ -238,5 +245,78 @@ header {
     transform: translateX(11rem);
 }
 .userInfo {
-    clear: both;
+    display: flex;
+    align-items: center;
+}
+.fa-info {
+    color: #0056fc;
+    width: 1rem;
+}
+.popular {
+    background-color: #F2F2F2;
+    padding: 2rem;
+    width: fit-content;
+    justify-content: space-around;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 2rem;
+    margin-left: 2rem;
+    float: right;
+}
+.popularTitle > h2 {
+    float: left;
+}
+.offerPopular {
+    background-color: white;
+    padding: .5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 23rem;
+    height: 10rem;
+    border-radius: 1rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+}
+.imgPopular {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 8.5rem;
+    border-radius: .5rem 0 0 .5rem;
+    float: left;
+    margin-right: 1rem;
+}
+.accommodationGlobal {
+    background-color: #F2F2F2;
+    display: flex;
+    border-radius: 1.5rem;
+    flex-direction: column;
+    padding: 2.3rem;
+}
+.accommodationGlobal > .accommodation {
+    justify-content: center;
+}
+.accommodation {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+}
+.offerAccommodation {
+    background-color: white;
+    padding: .4rem;
+    width: 18rem;
+    border-radius: 1.5rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+}
+.imgAccommodation {
+    object-fit: cover;
+    object-position: center;
+    height: 8.4rem;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+.textAccommodation {
+    margin-left: .8rem;
+    line-height: .5rem;
 }
