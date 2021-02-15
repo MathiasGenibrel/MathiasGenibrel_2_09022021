@@ -6,7 +6,7 @@
     </head>
     <body>
         <header>
-            <img src="assets/images/logo/Reservia.svg" alt="Reservia logo">
+            <img draggable="false" src="assets/images/logo/Reservia.svg" alt="Reservia logo">
             <nav class="userNavigation">
                 <a class="select" href="#">Hébergements</a>
                 <a class="select" href="#">Activités</a>
@@ -175,71 +175,61 @@
                 </div>
                 <a href="#"><h3>Afficher plus</h3></a>
             </section>
-            <section class="activity">
+            <section class="activityGlobal">
                 <h2>Activités à Marseille</h2>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Vieux Port</h3>
-                </article>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Fort de Pomègues</h3>
-                </article>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Îles du Frioul</h3>
-                </article>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Parc National des Calanques</h3>
-                </article>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Notre-Dame-de-la-Garde</h3>
-                </article>
-                <article class="availableActivity">
-                    <img src="" alt="">
-                    <h3>Parc Longchamp</h3>
-                </article>
+                <div class="activity">
+                    <article class="availableActivityHigh1 availableActivity">
+                        <img class="imgActivity imgActivityHigh" src="assets/images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Vieux Port</h3>
+                    </article>
+                    <article class="availableActivityR1 availableActivity">
+                        <img class="imgActivity imgActivityR1" src="assets/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Fort de Pomègues</h3>
+                    </article>
+                    <article class="availableActivityR2 availableActivity">
+                        <img class="imgActivity imgActivityR2" src="assets/images/activites/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Îles du Frioul</h3>
+                    </article>
+                    <article class="availableActivityHigh2 availableActivity">
+                        <img class="imgActivity imgActivityHigh" src="assets/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Parc National des Calanques</h3>
+                    </article>
+                    <article class="availableActivityR3 availableActivity">
+                        <img class="imgActivity imgActivityR3" src="assets/images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Notre-Dame-de-la-Garde</h3>
+                    </article>
+                    <article class="availableActivityR4 availableActivity">
+                        <img class="imgActivity imgActivityR4" src="assets/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
+                        <h3 class="textActivity">Parc Longchamp</h3>
+                    </article>
+                </div>
             </section>
         </main>
         <footer>
-            <table class="about">
-                <tr>
-                    <th>A propos</th>
-                </tr>
-                <tr>
-                    <td>Fonctionnement du site</td>
-                </tr>
-                <tr>
-                    <td>Conditions générales de vente</td>
-                </tr>
-                <tr>
-                    <td>Données et confidentialité</td>
-                </tr>
-            </table>
-            <table class="ourAccommodation">
-                <tr>
-                    <th>Nos hébergements</th>
-                </tr>
-                <tr>
-                    <td>Charte qualité</td>
-                </tr>
-                <tr>
-                    <td>Soumettre votre hôtel</td>
-                </tr>
-            </table>
-            <table class="assistance">
-                <tr>
-                    <th>Assistance</th>
-                </tr>
-                <tr>
-                    <td>Centre d'aide</td>
-                </tr>
-                <tr>
-                    <td>Nous contacter</td>
-                </tr>
-            </table>
+            <div class="footerInfo">
+                <div class="about">
+                    <ul class="footerList">
+                        <li><h3>A propos</h3></li>
+                        <li><a href="#">Fonctionnement du site</a></li>
+                        <li><a href="#">Conditions générales de vente</a></li>
+                        <li><a href="#">Données et confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="ourAccommodation">
+                    <ul class="footerList">
+                        <li><h3>Nos hébergements</h3></li>
+                        <li><a href="#">Charte qualité</a></li>
+                        <li><a href="#">Soumettre votre hôtel</a></li>
+                    </ul>
+                </div>
+                <div class="assistance">
+                    <ul class="footerList">
+                        <li><h3>Assistance</h3></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
         </footer>
         <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
     </body>

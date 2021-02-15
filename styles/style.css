@@ -1,6 +1,6 @@
 body {
     font-family: 'Raleway', sans-serif;
-    margin: 0 2rem 0 2rem;
+    margin: 0;
 }
 header {
     display: flex;
@@ -8,6 +8,11 @@ header {
     align-items: center;
     width: 100%;
     height: 4rem;
+}
+main, header, .footerInfo{
+    margin: 0 auto 0 auto;
+    max-width: 95rem;
+    width: 95vw;
 }
 .sign {
     font-weight: bold;
@@ -261,7 +266,7 @@ header {
     display: grid;
     grid-template-columns: repeat(1, auto);
     row-gap: 2rem;
-    margin-left: 2rem;
+    margin-left: 2.3rem;
     float: right;
 }
 .popularTitle > h2 {
@@ -285,6 +290,7 @@ header {
     border-radius: .5rem 0 0 .5rem;
     float: left;
     margin-right: 1rem;
+    -webkit-user-drag: none;
 }
 .accommodationGlobal {
     background-color: #F2F2F2;
@@ -293,19 +299,27 @@ header {
     flex-direction: column;
     padding: 2.3rem;
 }
+.accommodationGlobal > a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    top: 1.5rem;
+}
 .accommodationGlobal > .accommodation {
     justify-content: center;
 }
 .accommodation {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 2.5rem;
-    column-gap: 2rem;
+    column-gap: 3rem;
 }
 .offerAccommodation {
     background-color: white;
+    cursor: pointer;
     padding: .4rem;
-    width: 18rem;
+    width: 100%;
+    max-width: 18rem;
     border-radius: 1.5rem;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
@@ -315,8 +329,99 @@ header {
     height: 8.4rem;
     width: 100%;
     border-radius: 1rem 1rem 0 0;
+    -webkit-user-drag: none;
 }
 .textAccommodation {
     margin-left: .8rem;
     line-height: .5rem;
+}
+.activityGlobal {
+    display: flex;
+    flex-direction: column;
+    padding: 2.3rem 0 2.3rem;
+}
+.activity {
+    display: grid;
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+    grid-template-rows: 13rem 13rem;
+    grid-template-areas: 
+    "highRecommendation1 Recommendation1 highRecommendation2 Recommendation3"
+    "highRecommendation1 Recommendation2 highRecommendation2 Recommendation4";
+}
+.availableActivityHigh1 {
+    grid-area: highRecommendation1;
+}
+.availableActivityHigh2 {
+    grid-area: highRecommendation2;
+}
+.availableActivityR1 {
+    grid-area: Recommendation1;
+    height: 15.5rem;
+}
+.availableActivityR2 {
+    grid-area: Recommendation2;
+    height: 10.5rem;
+    margin-top: 2.5rem;
+}
+.availableActivityR3 {
+    grid-area: Recommendation3;
+}
+.availableActivityR4 {
+    grid-area: Recommendation4;
+}
+.availableActivity {
+    border-radius: 1.5rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+    width: 20rem;
+}
+.imgActivity {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+    width: 20rem;
+    height: 9rem;
+    -webkit-user-drag: none;
+}
+.imgActivityHigh {
+    height: 24.5rem;
+}
+.imgActivityR1 {
+    height: 11.5rem;
+    object-position: 50% 42%;
+}
+.imgActivityR2 {
+    height: 6.5rem;
+    object-position: 50% 28%;
+}
+.imgActivityR3 {
+    object-position: top;
+}
+.imgActivityR4 {
+    object-position: center;
+}
+.textActivity {
+    margin-left: 1rem;
+}
+footer {
+    background-color: #F2F2F2;
+    width: 100%;
+    margin: 0;
+}
+.footerInfo {
+    display: flex;
+    text-align: left;
+    padding: 1rem 0 1rem 0;
+}
+.about, .ourAccommodation, .assistance {
+    width: 33vw;
+    min-width: 20rem;
+}
+.footerList {
+    list-style: none;
+    line-height: 2rem;
+}
+.footerList > li a {
+    text-decoration: none;
+    color: black;
 }
