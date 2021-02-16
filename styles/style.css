@@ -29,6 +29,7 @@ main, header, .footerInfo{
     height: 100%;
     line-height: 4rem;
     text-align: center;
+    border-top: solid 0.15rem transparent;
     flex-grow: 1;
 }
 .userNavigation > .select:hover {
@@ -64,7 +65,7 @@ main, header, .footerInfo{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    --heightSwitch: 2.4rem;
+    --heightSwitch: 2.5rem;
     max-width: 58rem;
 }
 .userFilter > h3 {
@@ -107,7 +108,7 @@ main, header, .footerInfo{
     height: 2.4rem;
     width: 2.4rem;
     left: -.1rem;
-    bottom: -.1rem;
+    bottom: -.075rem;
     background-color: #DEEBFF;
     border-radius: 50%;
     transition: .2s;
@@ -120,8 +121,13 @@ main, header, .footerInfo{
     background-color: #0056fc;
     color: white;
 }
-.eco:checked + .sliderEco::before {
+.eco:checked + .sliderEco::before, .eco:checked ~ .fa-money-bill-wave{
     transform: translateX(7.5rem);
+}
+.fa-money-bill-wave {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
 }
 /*Filtre switch toggle Fam*/
 .switchFam {
@@ -153,7 +159,7 @@ main, header, .footerInfo{
     height: 2.4rem;
     width: 2.4rem;
     left: -.1rem;
-    bottom: -.1rem;
+    bottom: -.075rem;
     background-color: #DEEBFF;
     border-radius: 50%;
     transition: .2s;
@@ -162,8 +168,13 @@ main, header, .footerInfo{
     background-color: #0056fc;
     color: white;
 }
-.fam:checked + .sliderFam::before {
+.fam:checked + .sliderFam::before, .fam:checked ~ .fa-child {
     transform: translateX(5.7rem);
+}
+.fa-child {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
 }
 /*Filtre switch toggle Rom*/
 .switchRom {
@@ -195,7 +206,7 @@ main, header, .footerInfo{
     height: 2.4rem;
     width: 2.4rem;
     left: -.1rem;
-    bottom: -.1rem;
+    bottom: -.075rem;
     background-color: #DEEBFF;
     border-radius: 50%;
     transition: .2s;
@@ -204,8 +215,13 @@ main, header, .footerInfo{
     background-color: #0056fc;
     color: white;
 }
-.rom:checked + .sliderRom::before {
+.rom:checked + .sliderRom::before, .rom:checked ~ .fa-heart {
     transform: translateX(7.5rem);
+}
+.fa-heart {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
 }
 /*Filtre switch toggle Ani*/
 .switchAni {
@@ -216,9 +232,11 @@ main, header, .footerInfo{
     height: var(--heightSwitch);
 }
 .ani {
+    position: relative;
     opacity: 0;
     width: 0;
     height: 0;
+    z-index: 99;
 }
 .sliderAni {
     position: absolute;
@@ -237,46 +255,63 @@ main, header, .footerInfo{
     height: 2.4rem;
     width: 2.4rem;
     left: -.1rem;
-    bottom: -.1rem;
+    bottom: -.075rem;
     background-color: #DEEBFF;
     border-radius: 50%;
+    transition: .2s;
+}
+.fa-dog {
+    position: absolute;
+    color: #0056fc;
     transition: .2s;
 }
 .ani:checked + .sliderAni {
     background-color: #0056fc;
     color: white;
 }
-.ani:checked + .sliderAni::before {
+.ani:checked ~ .fa-dog, .ani:checked ~ .sliderAni::before{
     transform: translateX(11rem);
 }
 .userInfo {
     display: flex;
     align-items: center;
 }
-.fa-info {
+.userInfo > p {
+    margin-left: .8rem;
+}
+.logoInfo {
+    border: #e7e7e7 solid 1px;
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.fa-info, .fa-star {
     color: #0056fc;
-    width: 1rem;
+}
+.lightStar {
+    color: #DEEBFF;
 }
 .popular {
     background-color: #F2F2F2;
-    padding: 2rem;
-    width: fit-content;
-    justify-content: space-around;
+    padding: 0 2rem;
+    margin-left: 2.3rem;
     border-radius: 1.5rem;
+    height: 43.5rem;
+    float: right;
+}
+.gridPopular {
     display: grid;
     grid-template-columns: repeat(1, auto);
     row-gap: 2rem;
-    margin-left: 2.3rem;
-    float: right;
 }
-.popularTitle > h2 {
-    float: left;
+.popularTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .offerPopular {
     background-color: white;
     padding: .5rem;
-    box-sizing: border-box;
-    overflow: hidden;
     width: 23rem;
     height: 10rem;
     border-radius: 1rem;
@@ -297,7 +332,8 @@ main, header, .footerInfo{
     display: flex;
     border-radius: 1.5rem;
     flex-direction: column;
-    padding: 2.3rem;
+    height: 43.5rem;
+    padding: 0 2rem;
 }
 .accommodationGlobal > a {
     text-decoration: none;
@@ -317,7 +353,7 @@ main, header, .footerInfo{
 .offerAccommodation {
     background-color: white;
     cursor: pointer;
-    padding: .4rem;
+    padding: .4rem .4rem .8rem .4rem;
     width: 100%;
     max-width: 18rem;
     border-radius: 1.5rem;
@@ -343,8 +379,8 @@ main, header, .footerInfo{
 .activity {
     display: grid;
     row-gap: 2.5rem;
-    column-gap: 2rem;
-    grid-template-rows: 13rem 13rem;
+    column-gap: 2.5rem;
+    grid-template-rows: repeat(1, 1fr);
     grid-template-areas: 
     "highRecommendation1 Recommendation1 highRecommendation2 Recommendation3"
     "highRecommendation1 Recommendation2 highRecommendation2 Recommendation4";
@@ -357,12 +393,9 @@ main, header, .footerInfo{
 }
 .availableActivityR1 {
     grid-area: Recommendation1;
-    height: 15.5rem;
 }
 .availableActivityR2 {
     grid-area: Recommendation2;
-    height: 10.5rem;
-    margin-top: 2.5rem;
 }
 .availableActivityR3 {
     grid-area: Recommendation3;
@@ -373,13 +406,13 @@ main, header, .footerInfo{
 .availableActivity {
     border-radius: 1.5rem;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
-    width: 20rem;
+    min-width: 18rem;
 }
 .imgActivity {
     object-fit: cover;
     object-position: center;
     border-radius: 1.5rem 1.5rem 0 0;
-    width: 20rem;
+    width: 100%;
     height: 9rem;
     -webkit-user-drag: none;
 }
@@ -387,11 +420,9 @@ main, header, .footerInfo{
     height: 24.5rem;
 }
 .imgActivityR1 {
-    height: 11.5rem;
     object-position: 50% 42%;
 }
 .imgActivityR2 {
-    height: 6.5rem;
     object-position: 50% 28%;
 }
 .imgActivityR3 {
@@ -425,3 +456,47 @@ footer {
     text-decoration: none;
     color: black;
 }
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            height: 24.5rem;
+        }
+        .gridPopular {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 3rem;
+        }
+        .offerPopular {
+            background-color: white;
+            padding: .4rem .4rem .8rem .4rem;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+        }
+        .imgPopular {
+            object-fit: cover;
+            object-position: center;
+            height: 8.4rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            float: none;
+        }
+        .textPopular {
+            margin-left: .8rem;
+            display: grid;
+            grid-template-rows: repeat(1, 4rem);
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1 Recommendation1"
+            "highRecommendation1 Recommendation2"
+            "Recommendation3 highRecommendation2"
+            "Recommendation4 highRecommendation2";
+        }
+    }
