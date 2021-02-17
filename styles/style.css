@@ -32,6 +32,10 @@ main, header, .footerInfo{
     border-top: solid 0.15rem transparent;
     flex-grow: 1;
 }
+.select {
+    color: black;
+    width: 33%;
+}
 .select:hover {
     border-top: solid 0.15rem #0056fc;
     color: #0056fc;
@@ -53,6 +57,9 @@ main, header, .footerInfo{
     position: absolute;
     margin: 0;
 }
+.btnResearchMobile {
+    display: none;
+}
 .inResearch {
     border: #F2F2F2 solid 1px;
     border-right: transparent;
@@ -62,20 +69,25 @@ main, header, .footerInfo{
 }
 .userFilter {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
     --heightSwitch: 2.5rem;
-    max-width: 58rem;
+    max-width: 60rem;
+    margin-top: 1rem;
 }
 .userFilter > h3 {
     float: left;
+}
+.filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 /*Filtre switch toggle Eco*/
 .switchEco {
     position: relative;
     cursor: pointer;
     display: inline-block;
+    margin: .25rem;
     width: 10rem;
     height: var(--heightSwitch);
 }
@@ -134,6 +146,7 @@ main, header, .footerInfo{
     position: relative;
     cursor: pointer;
     display: inline-block;
+    margin: .25rem;
     width: 8rem;
     height: var(--heightSwitch);
 }
@@ -181,6 +194,7 @@ main, header, .footerInfo{
     position: relative;
     cursor: pointer;
     display: inline-block;
+    margin: .25rem;
     width: 10rem;
     height: var(--heightSwitch);
 }
@@ -228,6 +242,7 @@ main, header, .footerInfo{
     position: relative;
     cursor: pointer;
     display: inline-block;
+    margin: .25rem;
     width: 13.5rem;
     height: var(--heightSwitch);
 }
@@ -316,6 +331,9 @@ main, header, .footerInfo{
     height: 10rem;
     box-sizing: border-box;
     border-radius: 1rem;
+    user-select: none;
+    text-decoration: none;
+    color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
 .imgPopular {
@@ -328,7 +346,7 @@ main, header, .footerInfo{
     margin-right: 1rem;
     -webkit-user-drag: none;
 }
-.accommodationGlobal {
+#accommodationGlobal {
     background-color: #F2F2F2;
     display: flex;
     border-radius: 1.5rem;
@@ -336,7 +354,7 @@ main, header, .footerInfo{
     height: 43.5rem;
     padding: 0 2rem;
 }
-.accommodationGlobal > a {
+#accommodationGlobal > a {
     text-decoration: none;
     color: black;
     position: relative;
@@ -353,11 +371,13 @@ main, header, .footerInfo{
 }
 .offerAccommodation {
     background-color: white;
-    cursor: pointer;
     padding: .4rem .4rem .8rem .4rem;
     width: 100%;
+    user-select: none;
     box-sizing: border-box;
     border-radius: 1.5rem;
+    text-decoration: none;
+    color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
 .imgAccommodation {
@@ -372,7 +392,7 @@ main, header, .footerInfo{
     margin-left: .8rem;
     line-height: .5rem;
 }
-.activityGlobal {
+#activityGlobal {
     display: flex;
     flex-direction: column;
     padding: 2.3rem 0 2.3rem;
@@ -406,8 +426,11 @@ main, header, .footerInfo{
 }
 .availableActivity {
     border-radius: 1.5rem;
+    user-select: none;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
     min-width: 18rem;
+    text-decoration: none;
+    color: black;
 }
 .imgActivity {
     object-fit: cover;
@@ -458,8 +481,8 @@ footer {
     color: black;
 }
 @media only screen 
-    and (min-device-width: 768px) 
-    and (max-device-width: 1024px)  {
+    and (min-width: 1024px) 
+    and (max-width: 1439px)  {
         .popular {
             float: none;
             margin-left: 0;
@@ -477,6 +500,8 @@ footer {
             width: 100%;
             height: auto;
             border-radius: 1.5rem;
+            text-decoration: none;
+            color: black;
         }
         .imgPopular {
             object-fit: cover;
@@ -491,6 +516,16 @@ footer {
             display: grid;
             grid-template-rows: repeat(1, 4rem);
         }
+        .textAccommodation {
+            margin-left: .8rem;
+            display: grid;
+            line-height: initial;
+            grid-template-rows: repeat(1, 4rem);
+        }
+        #accommodationGlobal {
+            height: auto;
+            padding-bottom: 2rem;
+        }
         .activity {
             grid-template-rows: repeat(1, 1fr);
             grid-template-areas: 
@@ -499,10 +534,92 @@ footer {
             "Recommendation3 highRecommendation2"
             "Recommendation4 highRecommendation2";
         }
+        .about, .ourAccommodation, .assistance {
+            min-width: 10rem;
+        }
+    }
+@media only screen 
+    and (min-width: 768px) 
+    and (max-width: 1023px)  {
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            padding-bottom: 2rem;
+            height: auto;
+            width: auto;
+        }
+        .gridPopular {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 1fr;
+            column-gap: 3rem;
+        }
+        .offerPopular:first-child {
+            grid-row: 1 / -1;
+        }
+        
+        .research {
+            width: 50%;
+        }
+        .inResearch {
+            width: 90%;
+        }
+        .offerPopular {
+            padding: .4rem .4rem .8rem .4rem;
+            width: 100%;
+            height: auto;
+        }
+        .imgPopular {
+            object-fit: cover;
+            object-position: center;
+            height: 8.4rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            float: none;
+        }
+        .imgPopularTablet {
+            height: 28.6rem;
+            object-position: 62% 50%;
+        }
+        .textPopular {
+            margin-left: .8rem;
+            display: grid;
+            grid-template-rows: repeat(1, 4rem);
+        }
+        .textAccommodation {
+            margin-left: .8rem;
+            display: grid;
+            line-height: initial;
+            grid-template-rows: repeat(1, 4rem);
+        }
+        .accommodation {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #accommodationGlobal {
+            height: auto;
+            padding-bottom: 2rem;
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1 Recommendation1"
+            "highRecommendation1 Recommendation2"
+            "Recommendation3 highRecommendation2"
+            "Recommendation4 highRecommendation2";
+        }
+        .about, .ourAccommodation, .assistance {
+            min-width: 10rem;
+        }
     }
     @media only screen 
-    and (min-device-width: 375px) 
-    and (max-device-width: 767px) {
+    and (min-width: 375px) 
+    and (max-width: 767px) {
+        .reserviaLogo {
+            position: relative;
+            left: 1.3rem;
+            top: .5rem;
+        }
         main, header, .footerInfo{
             width: 100%;
         }
@@ -511,27 +628,61 @@ footer {
             align-items: flex-start;
             height: 8rem;
         }
+        .userChoice {
+            margin: 1rem 1rem 1rem 1rem;
+            box-sizing: border-box;
+        }
         .userNavigation {
             width: 100%;
             margin-top: 1rem;
+        }
+        .select {
+            width: 50%;
         }
         .select:hover {
             border-top: solid 0.15rem transparent;
         }
         .selectActivity {
-            border-bottom: .15rem solid #F2F2F2;
+            border-bottom: .2rem solid #F2F2F2;
         }
         .selectAccommodation {
-            border-bottom: .15rem solid #0056fc;
+            border-bottom: .2rem solid #0056fc;
             color: #0056fc;
         }
         .sign {
-            position: relative;
+            position: absolute;
             top: 0;
-            right: 0;
+            right: 2rem;
+            height: 3rem;
+        }
+        .research {
+            width: 87%;
         }
         .inResearch {
-            width: 20vw;
+            width: 90%;
+        }
+        .btnResearch {
+            display: none;
+        }
+        .btnResearchMobile {
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            background-color: #0056fc;
+            border: transparent;
+            border-radius: 1rem;
+            padding: .75rem;
+            position: absolute;
+            margin: 0;
+        }
+        .userFilter {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
         .popular {
             float: none;
@@ -544,27 +695,38 @@ footer {
         }
         .offerPopular {
             background-color: white;
-            padding: .4rem .4rem .8rem .4rem;
-            width: 100%;
-            height: auto;
-            border-radius: 1.5rem;
+            padding: .3rem;
+            height: 9rem;
+            box-sizing: border-box;
+            border-radius: 1rem;
+            box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
         }
         .imgPopular {
-            object-fit: cover;
-            object-position: center;
-            height: 8.4rem;
-            width: 100%;
-            border-radius: 1rem 1rem 0 0;
-            float: none;
+            border-radius: .7rem 0 0 .7rem;
+        }
+        .textPopular {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            align-content: stretch;
+        }
+        .textPopular > * {
+            margin: 0;
+        }
+        .ratingStars {
+            align-self: end;
         }
         .accommodation {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
         }
-        .accommodationGlobal {
+        #accommodationGlobal {
             height: auto;
             padding: 0 2rem 2rem;
             background-color: white;
+        }
+        #activityGlobal {
+            margin: 0 2rem 0 2rem;
         }
         .activity {
             grid-template-rows: repeat(1, 1fr);
@@ -579,13 +741,13 @@ footer {
         .availableActivity {
             min-width: 1rem;
         }
+        .imgActivityHigh {
+            height: 9rem;
+        }
         .footerInfo {
             flex-direction: column;
         }
         .about, .ourAccommodation, .assistance {
             width: 100%;
-        }
-        body {
-            width: 375px;
         }
     }
