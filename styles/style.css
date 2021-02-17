@@ -24,7 +24,7 @@ main, header, .footerInfo{
     display: flex;
     justify-content: space-around;
 }
-.userNavigation > a {
+.select, .sign {
     text-decoration: none;
     height: 100%;
     line-height: 4rem;
@@ -32,7 +32,7 @@ main, header, .footerInfo{
     border-top: solid 0.15rem transparent;
     flex-grow: 1;
 }
-.userNavigation > .select:hover {
+.select:hover {
     border-top: solid 0.15rem #0056fc;
     color: #0056fc;
 }
@@ -57,7 +57,7 @@ main, header, .footerInfo{
     border: #F2F2F2 solid 1px;
     border-right: transparent;
     font-weight: bold;
-    width: 18rem;
+    width: 20vw;
     padding: .7rem;
 }
 .userFilter {
@@ -83,7 +83,7 @@ main, header, .footerInfo{
     font-weight: bold;
     position: absolute;
     right: 1rem;
-    line-height: .6rem;
+    line-height: 2.5rem;
     user-select: none;
 }
 .eco {
@@ -297,6 +297,7 @@ main, header, .footerInfo{
     margin-left: 2.3rem;
     border-radius: 1.5rem;
     height: 43.5rem;
+    width: 24rem;
     float: right;
 }
 .gridPopular {
@@ -312,8 +313,8 @@ main, header, .footerInfo{
 .offerPopular {
     background-color: white;
     padding: .5rem;
-    width: 23rem;
     height: 10rem;
+    box-sizing: border-box;
     border-radius: 1rem;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
@@ -355,7 +356,7 @@ main, header, .footerInfo{
     cursor: pointer;
     padding: .4rem .4rem .8rem .4rem;
     width: 100%;
-    max-width: 18rem;
+    box-sizing: border-box;
     border-radius: 1.5rem;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
@@ -458,13 +459,13 @@ footer {
 }
 @media only screen 
     and (min-device-width: 768px) 
-    and (max-device-width: 1024px)
-    and (-webkit-min-device-pixel-ratio: 1) {
+    and (max-device-width: 1024px)  {
         .popular {
             float: none;
             margin-left: 0;
             margin-bottom: 2.3rem;
             height: 24.5rem;
+            width: auto;
         }
         .gridPopular {
             grid-template-columns: repeat(3, 1fr);
@@ -476,7 +477,6 @@ footer {
             width: 100%;
             height: auto;
             border-radius: 1.5rem;
-            box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
         }
         .imgPopular {
             object-fit: cover;
@@ -498,5 +498,94 @@ footer {
             "highRecommendation1 Recommendation2"
             "Recommendation3 highRecommendation2"
             "Recommendation4 highRecommendation2";
+        }
+    }
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 767px) {
+        main, header, .footerInfo{
+            width: 100%;
+        }
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            height: 8rem;
+        }
+        .userNavigation {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .select:hover {
+            border-top: solid 0.15rem transparent;
+        }
+        .selectActivity {
+            border-bottom: .15rem solid #F2F2F2;
+        }
+        .selectAccommodation {
+            border-bottom: .15rem solid #0056fc;
+            color: #0056fc;
+        }
+        .sign {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+        .inResearch {
+            width: 20vw;
+        }
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            width: 100%;
+            height: auto;
+            padding-bottom: 2rem;
+            box-sizing: border-box;
+        }
+        .offerPopular {
+            background-color: white;
+            padding: .4rem .4rem .8rem .4rem;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+        }
+        .imgPopular {
+            object-fit: cover;
+            object-position: center;
+            height: 8.4rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            float: none;
+        }
+        .accommodation {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .accommodationGlobal {
+            height: auto;
+            padding: 0 2rem 2rem;
+            background-color: white;
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1"
+            "Recommendation1"
+            "Recommendation2"
+            "highRecommendation2"
+            "Recommendation3"
+            "Recommendation4";
+        }
+        .availableActivity {
+            min-width: 1rem;
+        }
+        .footerInfo {
+            flex-direction: column;
+        }
+        .about, .ourAccommodation, .assistance {
+            width: 100%;
+        }
+        body {
+            width: 375px;
         }
     }

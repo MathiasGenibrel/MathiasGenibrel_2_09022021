@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <title>Reservia</title>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
             <img draggable="false" src="assets/images/logo/Reservia.svg" alt="Reservia logo">
             <nav class="userNavigation">
-                <a class="select" href="#">Hébergements</a>
-                <a class="select" href="#">Activités</a>
+                <a class="select selectAccommodation" href="#">Hébergements</a>
+                <a class="select selectActivity" href="#">Activités</a>
                 <a class="sign" href="#">S'inscrire</a>
             </nav>
         </header>
@@ -27,34 +30,34 @@
                 <div class="userFilter">
                     <h3>Filtres</h3>
                     <label class="switchEco">
-                        <p class="textFilter">Économique</p>
+                        <span class="textFilter">Économique</span>
                         <input class="eco" type="checkbox">
                         <span class="sliderEco">
-                            <p class="textFilter textFilterAfter">Économique</p>
+                            <span class="textFilter textFilterAfter">Économique</span>
                         </span>
                         <i class="fas fa-money-bill-wave" data-fa-transform="down-12 right-2"></i>
                     </label>
                     <label class="switchFam">
-                        <p class="textFilter">Familial</p>
+                        <span class="textFilter">Familial</span>
                         <input class="fam" type="checkbox">
                         <span class="sliderFam">
-                            <p class="textFilter textFilterAfter">Familial</p>
+                            <span class="textFilter textFilterAfter">Familial</span>
                         </span>
                         <i class="fas fa-child" data-fa-transform="down-12 right-6"></i>
                     </label>
                     <label class="switchRom">
-                        <p class="textFilter">Romantique</p>
+                        <span class="textFilter">Romantique</span>
                         <input class="rom" type="checkbox">
                         <span class="sliderRom">
-                            <p class="textFilter textFilterAfter">Romantique</p>
+                            <span class="textFilter textFilterAfter">Romantique</span>
                         </span>
                         <i class="fas fa-heart" data-fa-transform="down-12 right-5"></i>
                     </label>
                     <label class="switchAni">
-                        <p class="textFilter">Animaux autorisés</p>
+                        <span class="textFilter">Animaux autorisés</span>
                         <input class="ani" type="checkbox">
                         <span class="sliderAni">
-                            <p class="textFilter textFilterAfter">Animaux autorisés</p>
+                            <span class="textFilter textFilterAfter">Animaux autorisés</span>
                         </span>
                         <i class="fas fa-dog" data-fa-transform="down-10 right-3"></i>
                     </label>
@@ -252,7 +255,4 @@
             </div>
         </footer>
     </body>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
 </html>
