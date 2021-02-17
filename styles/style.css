@@ -42,7 +42,7 @@ main, header, .footerInfo{
 }
 .research {
     background-color: #F2F2F2;
-    width: fit-content;
+    width: 30rem;
     padding: 0;
     padding-left: 1.5rem;
     border-radius: 1rem;
@@ -64,7 +64,7 @@ main, header, .footerInfo{
     border: #F2F2F2 solid 1px;
     border-right: transparent;
     font-weight: bold;
-    width: 20vw;
+    width: 90%;
     padding: .7rem;
 }
 .userFilter {
@@ -90,6 +90,9 @@ main, header, .footerInfo{
     margin: .25rem;
     width: 10rem;
     height: var(--heightSwitch);
+}
+.switchEco:hover {
+    transform: scale(1.05);
 }
 .textFilter {
     font-weight: bold;
@@ -150,6 +153,9 @@ main, header, .footerInfo{
     width: 8rem;
     height: var(--heightSwitch);
 }
+.switchFam:hover {
+    transform: scale(1.05);
+}
 .fam {
     opacity: 0;
     width: 0;
@@ -198,6 +204,9 @@ main, header, .footerInfo{
     width: 10rem;
     height: var(--heightSwitch);
 }
+.switchRom:hover {
+    transform: scale(1.05);
+}
 .rom {
     opacity: 0;
     width: 0;
@@ -245,6 +254,9 @@ main, header, .footerInfo{
     margin: .25rem;
     width: 13.5rem;
     height: var(--heightSwitch);
+}
+.switchAni:hover {
+    transform: scale(1.05);
 }
 .ani {
     position: relative;
@@ -336,6 +348,9 @@ main, header, .footerInfo{
     color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
+.offerPopular:hover {
+    transform: scale(1.01);
+}
 .imgPopular {
     object-fit: cover;
     object-position: center;
@@ -379,6 +394,9 @@ main, header, .footerInfo{
     text-decoration: none;
     color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+}
+.offerAccommodation:hover {
+    transform: scale(1.01);
 }
 .imgAccommodation {
     object-fit: cover;
@@ -432,6 +450,9 @@ main, header, .footerInfo{
     text-decoration: none;
     color: black;
 }
+.availableActivity:hover {
+    transform: scale(1.01);
+}
 .imgActivity {
     object-fit: cover;
     object-position: center;
@@ -483,6 +504,13 @@ footer {
 @media only screen 
     and (min-width: 1024px) 
     and (max-width: 1439px)  {
+        .research {
+            width: 50%;
+            max-width: 30rem;
+        }
+        .inResearch {
+            width: 90%;
+        }
         .popular {
             float: none;
             margin-left: 0;
@@ -557,13 +585,6 @@ footer {
         .offerPopular:first-child {
             grid-row: 1 / -1;
         }
-        
-        .research {
-            width: 50%;
-        }
-        .inResearch {
-            width: 90%;
-        }
         .offerPopular {
             padding: .4rem .4rem .8rem .4rem;
             width: 100%;
@@ -613,7 +634,7 @@ footer {
         }
     }
     @media only screen 
-    and (min-width: 375px) 
+    and (min-width: 360px) 
     and (max-width: 767px) {
         .reserviaLogo {
             position: relative;
@@ -703,6 +724,145 @@ footer {
         }
         .imgPopular {
             border-radius: .7rem 0 0 .7rem;
+        }
+        .textPopular {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            align-content: stretch;
+        }
+        .textPopular > * {
+            margin: 0;
+        }
+        .ratingStars {
+            align-self: end;
+        }
+        .accommodation {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        #accommodationGlobal {
+            height: auto;
+            padding: 0 2rem 2rem;
+            background-color: white;
+        }
+        #activityGlobal {
+            margin: 0 2rem 0 2rem;
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1"
+            "Recommendation1"
+            "Recommendation2"
+            "highRecommendation2"
+            "Recommendation3"
+            "Recommendation4";
+        }
+        .availableActivity {
+            min-width: 1rem;
+        }
+        .imgActivityHigh {
+            height: 9rem;
+        }
+        .footerInfo {
+            flex-direction: column;
+        }
+        .about, .ourAccommodation, .assistance {
+            width: 100%;
+        }
+    }
+    @media only screen  
+    and (max-width: 359px) {
+        .reserviaLogo {
+            position: relative;
+            left: 1.3rem;
+            top: .5rem;
+        }
+        main, header, .footerInfo{
+            width: 100%;
+        }
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            height: 8rem;
+        }
+        .userChoice {
+            margin: 1rem 1rem 1rem 1rem;
+            box-sizing: border-box;
+        }
+        .userNavigation {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .select {
+            width: 50%;
+        }
+        .select:hover {
+            border-top: solid 0.15rem transparent;
+        }
+        .selectActivity {
+            border-bottom: .2rem solid #F2F2F2;
+        }
+        .selectAccommodation {
+            border-bottom: .2rem solid #0056fc;
+            color: #0056fc;
+        }
+        .sign {
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            height: 3rem;
+        }
+        .research {
+            width: 87%;
+        }
+        .inResearch {
+            width: 90%;
+        }
+        .btnResearch {
+            display: none;
+        }
+        .btnResearchMobile {
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            background-color: #0056fc;
+            border: transparent;
+            border-radius: 1rem;
+            padding: .75rem;
+            position: absolute;
+            margin: 0;
+        }
+        .userFilter {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            width: 100%;
+            height: auto;
+            padding-bottom: 2rem;
+            box-sizing: border-box;
+        }
+        .offerPopular {
+            background-color: white;
+            padding: .3rem;
+            height: 9rem;
+            box-sizing: border-box;
+            border-radius: 1rem;
+            box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+        }
+        .imgPopular {
+            border-radius: .7rem 0 0 .7rem;
+            width: 6.5rem;
         }
         .textPopular {
             height: 100%;
