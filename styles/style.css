@@ -1,6 +1,11 @@
+:root{
+    --margin: 5rem;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
+    font-size: 16px;
 }
 header {
     display: flex;
@@ -9,45 +14,51 @@ header {
     width: 100%;
     height: 4rem;
 }
-main, header, .footerInfo{
+main, header, .footer__info{
     margin: 0 auto 0 auto;
     max-width: 95rem;
-    width: 95vw;
 }
-.sign {
-    font-weight: bold;
-    color: #0056fc;
-}
-.userNavigation {
+.user-navigation {
     width: 25rem;
     height: 100%;
     display: flex;
     justify-content: space-around;
 }
-.select, .sign {
+.user-navigation__sign {
+    font-weight: bold;
+    color: #0056fc;
+}
+.user-navigation__select, .user-navigation__sign {
     text-decoration: none;
     height: 100%;
     line-height: 4rem;
     text-align: center;
     border-top: solid 0.15rem transparent;
-    flex-grow: 1;
 }
-.select {
+.user-navigation__select {
     color: black;
     width: 33%;
 }
-.select:hover {
+.user-navigation__select:hover {
     border-top: solid 0.15rem #0056fc;
     color: #0056fc;
 }
-.research {
+
+.user-search__input-container {
     background-color: #F2F2F2;
     width: 30rem;
     padding: 0;
     padding-left: 1.5rem;
     border-radius: 1rem;
 }
-.btnResearch {
+.user-search__input-container__input {
+    border: #F2F2F2 solid 1px;
+    border-right: transparent;
+    font-weight: bold;
+    width: 90%;
+    padding: .7rem;
+}
+.user-search__input-container__button {
     color: white;
     font-weight: bold;
     background-color: #0056fc;
@@ -57,33 +68,26 @@ main, header, .footerInfo{
     position: absolute;
     margin: 0;
 }
-.btnResearchMobile {
+.user-search__input-container__button--mobile {
     display: none;
 }
-.inResearch {
-    border: #F2F2F2 solid 1px;
-    border-right: transparent;
-    font-weight: bold;
-    width: 90%;
-    padding: .7rem;
-}
-.userFilter {
+.user-filter {
     display: flex;
     align-items: center;
     --heightSwitch: 2.5rem;
     max-width: 60rem;
     margin-top: 1rem;
 }
-.userFilter > h3 {
+.user-filter > h3 {
     float: left;
 }
-.filter {
+.user-filter__filter-container {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 /*Filtre switch toggle Eco*/
-.switchEco {
+.user-filter__filter-container__switch-eco {
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -91,22 +95,25 @@ main, header, .footerInfo{
     width: 10rem;
     height: var(--heightSwitch);
 }
-.switchEco:hover {
+.user-filter__filter-container__switch-eco:hover {
     transform: scale(1.05);
 }
-.textFilter {
+.user-filter__filter-container__switch-eco__subtitle, .user-filter__filter-container__switch-eco__slider__subtitle,
+.user-filter__filter-container__switch-fam__subtitle, .user-filter__filter-container__switch-fam__slider__subtitle,
+.user-filter__filter-container__switch-rom__subtitle, .user-filter__filter-container__switch-rom__slider__subtitle,
+.user-filter__filter-container__switch-ani__subtitle, .user-filter__filter-container__switch-ani__slider__subtitle {
     font-weight: bold;
     position: absolute;
     right: 1rem;
     line-height: 2.5rem;
     user-select: none;
 }
-.eco {
+.user-filter__filter-container__switch-eco__input-checkbox {
     opacity: 0;
     width: 0;
     height: 0;
 }
-.sliderEco {
+.user-filter__filter-container__switch-eco__slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -117,7 +124,7 @@ main, header, .footerInfo{
     border-radius: 2rem;
     transition: .2s;
 }
-.sliderEco::before {
+.user-filter__filter-container__switch-eco__slider::before {
     position: absolute;
     content: "";
     height: 2.4rem;
@@ -128,24 +135,27 @@ main, header, .footerInfo{
     border-radius: 50%;
     transition: .2s;
 }
-.textFilterAfter {
+.user-filter__filter-container__switch-eco__slider__subtitle--after,
+.user-filter__filter-container__switch-fam__slider__subtitle--after,
+.user-filter__filter-container__switch-rom__slider__subtitle--after,
+.user-filter__filter-container__switch-ani__slider__subtitle--after {
     left: 1rem;
     top: -.1rem;
 }
-.eco:checked + .sliderEco {
+.user-filter__filter-container__switch-eco__input-checkbox:checked + .user-filter__filter-container__switch-eco__slider {
     background-color: #0056fc;
     color: white;
 }
-.eco:checked + .sliderEco::before, .eco:checked ~ .fa-money-bill-wave{
+.user-filter__filter-container__switch-eco__input-checkbox:checked + .user-filter__filter-container__switch-eco__slider::before, .user-filter__filter-container__switch-eco__input-checkbox:checked ~ .fa-money-bill-wave{
     transform: translateX(7.5rem);
 }
 .fa-money-bill-wave {
     position: absolute;
     color: #0056fc;
-    transition: .2s;
+    transition: .2s all;
 }
 /*Filtre switch toggle Fam*/
-.switchFam {
+.user-filter__filter-container__switch-fam {
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -153,15 +163,15 @@ main, header, .footerInfo{
     width: 8rem;
     height: var(--heightSwitch);
 }
-.switchFam:hover {
+.user-filter__filter-container__switch-fam:hover {
     transform: scale(1.05);
 }
-.fam {
+.user-filter__filter-container__switch-fam__input-checkbox {
     opacity: 0;
     width: 0;
     height: 0;
 }
-.sliderFam {
+.user-filter__filter-container__switch-fam__slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -172,7 +182,7 @@ main, header, .footerInfo{
     border-radius: 2rem;
     transition: .2s;
 }
-.sliderFam::before {
+.user-filter__filter-container__switch-fam__slider::before {
     position: absolute;
     content: "";
     height: 2.4rem;
@@ -183,11 +193,11 @@ main, header, .footerInfo{
     border-radius: 50%;
     transition: .2s;
 }
-.fam:checked + .sliderFam {
+.user-filter__filter-container__switch-fam__input-checkbox:checked + .user-filter__filter-container__switch-fam__slider {
     background-color: #0056fc;
     color: white;
 }
-.fam:checked + .sliderFam::before, .fam:checked ~ .fa-child {
+.user-filter__filter-container__switch-fam__input-checkbox:checked + .user-filter__filter-container__switch-fam__slider::before, .user-filter__filter-container__switch-fam__input-checkbox:checked ~ .fa-child {
     transform: translateX(5.7rem);
 }
 .fa-child {
@@ -196,7 +206,7 @@ main, header, .footerInfo{
     transition: .2s;
 }
 /*Filtre switch toggle Rom*/
-.switchRom {
+.user-filter__filter-container__switch-rom {
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -204,15 +214,15 @@ main, header, .footerInfo{
     width: 10rem;
     height: var(--heightSwitch);
 }
-.switchRom:hover {
+.user-filter__filter-container__switch-rom:hover {
     transform: scale(1.05);
 }
-.rom {
+.user-filter__filter-container__switch-rom__input-checkbox {
     opacity: 0;
     width: 0;
     height: 0;
 }
-.sliderRom {
+.user-filter__filter-container__switch-rom__slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -223,7 +233,7 @@ main, header, .footerInfo{
     border-radius: 2rem;
     transition: .2s;
 }
-.sliderRom::before {
+.user-filter__filter-container__switch-rom__slider::before {
     position: absolute;
     content: "";
     height: 2.4rem;
@@ -234,11 +244,11 @@ main, header, .footerInfo{
     border-radius: 50%;
     transition: .2s;
 }
-.rom:checked + .sliderRom {
+.user-filter__filter-container__switch-rom__input-checkbox:checked + .user-filter__filter-container__switch-rom__slider {
     background-color: #0056fc;
     color: white;
 }
-.rom:checked + .sliderRom::before, .rom:checked ~ .fa-heart {
+.user-filter__filter-container__switch-rom__input-checkbox:checked + .user-filter__filter-container__switch-rom__slider::before, .user-filter__filter-container__switch-rom__input-checkbox:checked ~ .fa-heart {
     transform: translateX(7.5rem);
 }
 .fa-heart {
@@ -247,7 +257,7 @@ main, header, .footerInfo{
     transition: .2s;
 }
 /*Filtre switch toggle Ani*/
-.switchAni {
+.user-filter__filter-container__switch-ani {
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -255,17 +265,17 @@ main, header, .footerInfo{
     width: 13.5rem;
     height: var(--heightSwitch);
 }
-.switchAni:hover {
+.user-filter__filter-container__switch-ani:hover {
     transform: scale(1.05);
 }
-.ani {
+.user-filter__filter-container__switch-ani__input-checkbox {
     position: relative;
     opacity: 0;
     width: 0;
     height: 0;
     z-index: 99;
 }
-.sliderAni {
+.user-filter__filter-container__switch-ani__slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -276,7 +286,7 @@ main, header, .footerInfo{
     border-radius: 2rem;
     transition: .2s;
 }
-.sliderAni::before {
+.user-filter__filter-container__switch-ani__slider::before {
     position: absolute;
     content: "";
     height: 2.4rem;
@@ -292,21 +302,21 @@ main, header, .footerInfo{
     color: #0056fc;
     transition: .2s;
 }
-.ani:checked + .sliderAni {
+.user-filter__filter-container__switch-ani__input-checkbox:checked + .user-filter__filter-container__switch-ani__slider {
     background-color: #0056fc;
     color: white;
 }
-.ani:checked ~ .fa-dog, .ani:checked ~ .sliderAni::before{
+.user-filter__filter-container__switch-ani__input-checkbox:checked ~ .fa-dog, .user-filter__filter-container__switch-ani__input-checkbox:checked ~ .user-filter__filter-container__switch-ani__slider::before{
     transform: translateX(11rem);
 }
-.userInfo {
+.user-info {
     display: flex;
     align-items: center;
 }
-.userInfo > p {
+.user-info > p {
     margin-left: .8rem;
 }
-.logoInfo {
+.user-info__logo-info {
     border: #e7e7e7 solid 1px;
     border-radius: 50%;
     width: 1.2rem;
@@ -327,17 +337,17 @@ main, header, .footerInfo{
     width: 24rem;
     float: right;
 }
-.gridPopular {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    row-gap: 2rem;
-}
-.popularTitle {
+.popular__title-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.offerPopular {
+.popular__grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 2rem;
+}
+.popular__grid__card {
     background-color: white;
     padding: .5rem;
     height: 10rem;
@@ -348,10 +358,10 @@ main, header, .footerInfo{
     color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
-.offerPopular:hover {
+.popular__grid__card:hover {
     transform: scale(1.01);
 }
-.imgPopular {
+.popular__grid__card__img {
     object-fit: cover;
     object-position: center;
     height: 100%;
@@ -361,7 +371,7 @@ main, header, .footerInfo{
     margin-right: 1rem;
     -webkit-user-drag: none;
 }
-#accommodationGlobal {
+.accommodation {
     background-color: #F2F2F2;
     display: flex;
     border-radius: 1.5rem;
@@ -369,22 +379,22 @@ main, header, .footerInfo{
     height: 43.5rem;
     padding: 0 2rem;
 }
-#accommodationGlobal > a {
+.accommodation > a {
     text-decoration: none;
     color: black;
     position: relative;
     top: 1.5rem;
 }
-.accommodationGlobal > .accommodation {
+.accommodation > .accommodation__grid {
     justify-content: center;
 }
-.accommodation {
+.accommodation__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 2.5rem;
     column-gap: 3rem;
 }
-.offerAccommodation {
+.accommodation__grid__card {
     background-color: white;
     padding: .4rem .4rem .8rem .4rem;
     width: 100%;
@@ -395,10 +405,10 @@ main, header, .footerInfo{
     color: black;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
 }
-.offerAccommodation:hover {
+.accommodation__grid__card:hover {
     transform: scale(1.01);
 }
-.imgAccommodation {
+.accommodation__grid__card__img {
     object-fit: cover;
     object-position: center;
     height: 8.4rem;
@@ -406,16 +416,16 @@ main, header, .footerInfo{
     border-radius: 1rem 1rem 0 0;
     -webkit-user-drag: none;
 }
-.textAccommodation {
+.accommodation__grid__card__name {
     margin-left: .8rem;
     line-height: .5rem;
 }
-#activityGlobal {
+.activity {
     display: flex;
     flex-direction: column;
     padding: 2.3rem 0 2.3rem;
 }
-.activity {
+.activity__grid {
     display: grid;
     row-gap: 2.5rem;
     column-gap: 2.5rem;
@@ -424,25 +434,7 @@ main, header, .footerInfo{
     "highRecommendation1 Recommendation1 highRecommendation2 Recommendation3"
     "highRecommendation1 Recommendation2 highRecommendation2 Recommendation4";
 }
-.availableActivityHigh1 {
-    grid-area: highRecommendation1;
-}
-.availableActivityHigh2 {
-    grid-area: highRecommendation2;
-}
-.availableActivityR1 {
-    grid-area: Recommendation1;
-}
-.availableActivityR2 {
-    grid-area: Recommendation2;
-}
-.availableActivityR3 {
-    grid-area: Recommendation3;
-}
-.availableActivityR4 {
-    grid-area: Recommendation4;
-}
-.availableActivity {
+.activity__grid__card {
     border-radius: 1.5rem;
     user-select: none;
     box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
@@ -450,10 +442,28 @@ main, header, .footerInfo{
     text-decoration: none;
     color: black;
 }
-.availableActivity:hover {
+.activity__grid__card:hover {
     transform: scale(1.01);
 }
-.imgActivity {
+.activity__grid__card--high-1 {
+    grid-area: highRecommendation1;
+}
+.activity__grid__card--high-2 {
+    grid-area: highRecommendation2;
+}
+.activity__grid__card--low-1 {
+    grid-area: Recommendation1;
+}
+.activity__grid__card--low-2 {
+    grid-area: Recommendation2;
+}
+.activity__grid__card--low-3 {
+    grid-area: Recommendation3;
+}
+.activity__grid__card--low-4 {
+    grid-area: Recommendation4;
+}
+.activity__grid__card__img {
     object-fit: cover;
     object-position: center;
     border-radius: 1.5rem 1.5rem 0 0;
@@ -461,22 +471,22 @@ main, header, .footerInfo{
     height: 9rem;
     -webkit-user-drag: none;
 }
-.imgActivityHigh {
+.activity__grid__card__img--high {
     height: 24.5rem;
 }
-.imgActivityR1 {
+.activity__grid__card__img--low-1 {
     object-position: 50% 42%;
 }
-.imgActivityR2 {
+.activity__grid__card__img--low-2 {
     object-position: 50% 28%;
 }
-.imgActivityR3 {
+.activity__grid__card__img--low-3 {
     object-position: top;
 }
-.imgActivityR4 {
+.activity__grid__card__img--low-4 {
     object-position: center;
 }
-.textActivity {
+.activity__grid__card__name {
     margin-left: 1rem;
 }
 footer {
@@ -484,31 +494,30 @@ footer {
     width: 100%;
     margin: 0;
 }
-.footerInfo {
+.footer__info {
     display: flex;
     text-align: left;
     padding: 1rem 0 1rem 0;
 }
-.about, .ourAccommodation, .assistance {
-    width: 33vw;
-    min-width: 20rem;
+.footer__info__about, .footer__info__accommodation, .footer__info__help {
+    width: 33%;
 }
-.footerList {
-    list-style: none;
-    line-height: 2rem;
-}
-.footerList > li a {
+.footer__info__about__link, .footer__info__accommodation__link, .footer__info__help__link {
     text-decoration: none;
     color: black;
+}
+.footer__info > * {
+    list-style: none;
+    line-height: 2rem;
 }
 @media only screen 
     and (min-width: 1024px) 
     and (max-width: 1439px)  {
-        .research {
+        .user-search {
             width: 50%;
             max-width: 30rem;
         }
-        .inResearch {
+        .user-search__input-container__input {
             width: 90%;
         }
         .popular {
@@ -518,11 +527,11 @@ footer {
             height: 24.5rem;
             width: auto;
         }
-        .gridPopular {
+        .popular__grid {
             grid-template-columns: repeat(3, 1fr);
             column-gap: 3rem;
         }
-        .offerPopular {
+        .popular__grid__card {
             background-color: white;
             padding: .4rem .4rem .8rem .4rem;
             width: 100%;
@@ -531,7 +540,7 @@ footer {
             text-decoration: none;
             color: black;
         }
-        .imgPopular {
+        .popular__grid__card__img {
             object-fit: cover;
             object-position: center;
             height: 8.4rem;
@@ -539,22 +548,22 @@ footer {
             border-radius: 1rem 1rem 0 0;
             float: none;
         }
-        .textPopular {
+        .popular__grid__card__name {
             margin-left: .8rem;
             display: grid;
             grid-template-rows: repeat(1, 4rem);
         }
-        .textAccommodation {
+        .accommodation__grid__card__name {
             margin-left: .8rem;
             display: grid;
             line-height: initial;
             grid-template-rows: repeat(1, 4rem);
         }
-        #accommodationGlobal {
+        .accommodation {
             height: auto;
             padding-bottom: 2rem;
         }
-        .activity {
+        .activity__grid {
             grid-template-rows: repeat(1, 1fr);
             grid-template-areas: 
             "highRecommendation1 Recommendation1"
@@ -562,7 +571,7 @@ footer {
             "Recommendation3 highRecommendation2"
             "Recommendation4 highRecommendation2";
         }
-        .about, .ourAccommodation, .assistance {
+        .footer__info__about, .footer__info__accommodation, .footer__info__help {
             min-width: 10rem;
         }
     }
@@ -577,20 +586,20 @@ footer {
             height: auto;
             width: auto;
         }
-        .gridPopular {
+        .popular__grid {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 1fr 1fr;
             column-gap: 3rem;
         }
-        .offerPopular:first-child {
+        .popular__grid__card:first-child {
             grid-row: 1 / -1;
         }
-        .offerPopular {
+        .popular__grid__card {
             padding: .4rem .4rem .8rem .4rem;
             width: 100%;
             height: auto;
         }
-        .imgPopular {
+        .popular__grid__card__img {
             object-fit: cover;
             object-position: center;
             height: 8.4rem;
@@ -598,30 +607,30 @@ footer {
             border-radius: 1rem 1rem 0 0;
             float: none;
         }
-        .imgPopularTablet {
+        .popular__grid__card__img--tablet {
             height: 28.6rem;
             object-position: 62% 50%;
         }
-        .textPopular {
+        .popular__grid__card__name {
             margin-left: .8rem;
             display: grid;
             grid-template-rows: repeat(1, 4rem);
         }
-        .textAccommodation {
+        .accommodation__grid__card__name {
             margin-left: .8rem;
             display: grid;
             line-height: initial;
             grid-template-rows: repeat(1, 4rem);
         }
-        .accommodation {
+        .accommodation__grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
-        #accommodationGlobal {
+        .accommodation {
             height: auto;
             padding-bottom: 2rem;
         }
-        .activity {
+        .activity__grid {
             grid-template-rows: repeat(1, 1fr);
             grid-template-areas: 
             "highRecommendation1 Recommendation1"
@@ -629,19 +638,23 @@ footer {
             "Recommendation3 highRecommendation2"
             "Recommendation4 highRecommendation2";
         }
-        .about, .ourAccommodation, .assistance {
-            min-width: 10rem;
+        .footer__info {
+            justify-content: space-between;
+            margin-right: 2rem;
+        }
+        .footer__info__about, .footer__info__accommodation, .footer__info__help {
+            width: auto;
         }
     }
     @media only screen 
-    and (min-width: 360px) 
+    and (min-width: 320px) 
     and (max-width: 767px) {
-        .reserviaLogo {
+        .reservia-logo {
             position: relative;
             left: 1.3rem;
             top: .5rem;
         }
-        main, header, .footerInfo{
+        main, header, .footer__info{
             width: 100%;
         }
         header {
@@ -649,43 +662,43 @@ footer {
             align-items: flex-start;
             height: 8rem;
         }
-        .userChoice {
+        .user-choice {
             margin: 1rem 1rem 1rem 1rem;
             box-sizing: border-box;
         }
-        .userNavigation {
+        .user-navigation {
             width: 100%;
             margin-top: 1rem;
         }
-        .select {
+        .user-navigation__select {
             width: 50%;
         }
-        .select:hover {
+        .user-navigation__select:hover {
             border-top: solid 0.15rem transparent;
         }
-        .selectActivity {
+        .user-navigation__select--activity-mobile {
             border-bottom: .2rem solid #F2F2F2;
         }
-        .selectAccommodation {
+        .user-navigation__select--accommodation-mobile {
             border-bottom: .2rem solid #0056fc;
             color: #0056fc;
         }
-        .sign {
+        .user-navigation__sign {
             position: absolute;
             top: 0;
             right: 2rem;
             height: 3rem;
         }
-        .research {
+        .user-search__input-container {
             width: 87%;
         }
-        .inResearch {
+        .user-search__input-container__input {
             width: 90%;
         }
-        .btnResearch {
+        .user-search__input-container__button {
             display: none;
         }
-        .btnResearchMobile {
+        .user-search__input-container__button--mobile {
             display: inline-block;
             color: white;
             font-weight: bold;
@@ -696,11 +709,11 @@ footer {
             position: absolute;
             margin: 0;
         }
-        .userFilter {
+        .user-filter {
             justify-content: flex-start;
             flex-wrap: wrap;
         }
-        .filter {
+        .user-filter__filter-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -714,7 +727,7 @@ footer {
             padding-bottom: 2rem;
             box-sizing: border-box;
         }
-        .offerPopular {
+        .popular__grid__card {
             background-color: white;
             padding: .3rem;
             height: 9rem;
@@ -722,34 +735,37 @@ footer {
             border-radius: 1rem;
             box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
         }
-        .imgPopular {
+        .popular__grid__card__img {
             border-radius: .7rem 0 0 .7rem;
         }
-        .textPopular {
+        .popular__grid__card__name {
             height: 100%;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             align-content: stretch;
         }
-        .textPopular > * {
+        .popular__grid__card__name > * {
             margin: 0;
         }
-        .ratingStars {
+        .popular__grid__card__name__rating-stars {
             align-self: end;
         }
-        .accommodation {
+        .accommodation__grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
         }
-        #accommodationGlobal {
+        .accommodation {
             height: auto;
-            padding: 0 2rem 2rem;
+            padding: 0;
             background-color: white;
         }
-        #activityGlobal {
+        .accommodation {
             margin: 0 2rem 0 2rem;
         }
         .activity {
+            margin: 0 1rem 0 1rem;
+        }
+        .activity__grid {
             grid-template-rows: repeat(1, 1fr);
             grid-template-areas: 
             "highRecommendation1"
@@ -759,155 +775,19 @@ footer {
             "Recommendation3"
             "Recommendation4";
         }
-        .availableActivity {
-            min-width: 1rem;
-        }
-        .imgActivityHigh {
+        .activity__grid__card__img {
             height: 9rem;
         }
-        .footerInfo {
+        .footer__info {
             flex-direction: column;
         }
-        .about, .ourAccommodation, .assistance {
-            width: 100%;
+        .footer__info__about, .footer__info__accommodation, .footer__info__help {
+            width: auto;
         }
-    }
-    @media only screen  
-    and (max-width: 359px) {
-        .reserviaLogo {
-            position: relative;
-            left: 1.3rem;
-            top: .5rem;
-        }
-        main, header, .footerInfo{
-            width: 100%;
-        }
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-            height: 8rem;
-        }
-        .userChoice {
-            margin: 1rem 1rem 1rem 1rem;
-            box-sizing: border-box;
-        }
-        .userNavigation {
-            width: 100%;
-            margin-top: 1rem;
-        }
-        .select {
-            width: 50%;
-        }
-        .select:hover {
-            border-top: solid 0.15rem transparent;
-        }
-        .selectActivity {
-            border-bottom: .2rem solid #F2F2F2;
-        }
-        .selectAccommodation {
-            border-bottom: .2rem solid #0056fc;
-            color: #0056fc;
-        }
-        .sign {
-            position: absolute;
-            top: 0;
-            right: 2rem;
-            height: 3rem;
-        }
-        .research {
-            width: 87%;
-        }
-        .inResearch {
-            width: 90%;
-        }
-        .btnResearch {
-            display: none;
-        }
-        .btnResearchMobile {
-            display: inline-block;
-            color: white;
-            font-weight: bold;
-            background-color: #0056fc;
-            border: transparent;
-            border-radius: 1rem;
-            padding: .75rem;
-            position: absolute;
-            margin: 0;
-        }
-        .userFilter {
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-        .filter {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-        .popular {
-            float: none;
-            margin-left: 0;
-            margin-bottom: 2.3rem;
-            width: 100%;
-            height: auto;
-            padding-bottom: 2rem;
-            box-sizing: border-box;
-        }
-        .offerPopular {
-            background-color: white;
-            padding: .3rem;
-            height: 9rem;
-            box-sizing: border-box;
-            border-radius: 1rem;
-            box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
-        }
-        .imgPopular {
-            border-radius: .7rem 0 0 .7rem;
-            width: 6.5rem;
-        }
-        .textPopular {
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            align-content: stretch;
-        }
-        .textPopular > * {
-            margin: 0;
-        }
-        .ratingStars {
-            align-self: end;
-        }
-        .accommodation {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-        }
-        #accommodationGlobal {
-            height: auto;
-            padding: 0 2rem 2rem;
-            background-color: white;
-        }
-        #activityGlobal {
-            margin: 0 2rem 0 2rem;
-        }
-        .activity {
-            grid-template-rows: repeat(1, 1fr);
-            grid-template-areas: 
-            "highRecommendation1"
-            "Recommendation1"
-            "Recommendation2"
-            "highRecommendation2"
-            "Recommendation3"
-            "Recommendation4";
-        }
-        .availableActivity {
-            min-width: 1rem;
-        }
-        .imgActivityHigh {
-            height: 9rem;
-        }
-        .footerInfo {
-            flex-direction: column;
-        }
-        .about, .ourAccommodation, .assistance {
-            width: 100%;
+        @media only screen  
+        and (max-width: 359px) {
+            .popular__grid__card__img {
+                width: 6.5rem;
+            }
         }
     }
