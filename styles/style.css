@@ -125,6 +125,7 @@ main, header, .footer__info{
     padding: .75rem;
     position: absolute;
     margin: 0;
+    cursor: pointer
 }
 .user-search__input-container__button--mobile {
     display: none;
@@ -407,6 +408,9 @@ main, header, .footer__info{
 .accommodation__grid__card__name {
     margin-left: .8rem;
     line-height: .5rem;
+}
+.accommodation__show-more {
+    cursor: pointer;
 }
 .activity {
     display: flex;
