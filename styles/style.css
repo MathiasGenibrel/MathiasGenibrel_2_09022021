@@ -1,17 +1,67 @@
 :root{
-    --margin: 5rem;
+    --spacing: 2rem;
     --height-switch: 2.5rem;
     --diameter-round-slider: 2.4rem;
     --width-slider-container: 10.5rem; /* Minimum width acceptable = 10rem */
     --height-block-accommodation-popular: 42rem;
     --body-width: 86rem;
+    --font-size-h2: 2rem;
+    --font-size-h3 : 1.2rem;
+    --font-size-p : 1rem;
 }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
+	line-height: 1;
     font-family: 'Raleway', sans-serif;
-    margin: 0;
     font-size: 16px;
 }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*
+    Fin CSS RESET
+*/
 header {
     display: flex;
     justify-content: space-between;
@@ -47,7 +97,11 @@ main, header, .footer__info{
     border-top: solid 0.15rem #0056fc;
     color: #0056fc;
 }
-
+.user-search__title, .popular__title-container__title, .accommodation__title, .activity__title {
+    font-size: var(--font-size-h2);
+    margin: var(--font-size-h2) 0 var(--font-size-h2) 0;
+    font-weight: 600;
+}
 .user-search__input-container {
     background-color: #F2F2F2;
     width: 30rem;
@@ -79,10 +133,14 @@ main, header, .footer__info{
     display: flex;
     align-items: center;
     max-width: 60rem;
-    margin-top: 1rem;
+    margin: calc(var(--spacing) / 2) 0 calc(var(--spacing) / 2) 0;
 }
-.user-filter > h3 {
-    float: left;
+.user-filter__title, .popular__grid__card__name__title,
+.accommodation__grid__card__name__title, .accommodation__show-more, .activity__grid__card__name,
+.footer__info__about__title, .footer__info__accommodation__title, .footer__info__help__title {
+    font-size: var(--font-size-h3);
+    margin: var(--font-size-h3) 0 var(--font-size-h3) 0;
+    font-weight: bold;
 }
 .user-filter__filter-container {
     width: 100%;
@@ -256,7 +314,7 @@ main, header, .footer__info{
 }
 .popular {
     background-color: #F2F2F2;
-    padding: 0 2rem;
+    padding: 0 var(--spacing);
     margin-left: 2.3rem;
     border-radius: 1.5rem;
     height: var(--height-block-accommodation-popular);
@@ -271,7 +329,7 @@ main, header, .footer__info{
 .popular__grid {
     display: grid;
     grid-template-columns: repeat(1, auto);
-    row-gap: 2rem;
+    row-gap: var(--spacing);
 }
 .popular__grid__card {
     background-color: white;
@@ -297,13 +355,17 @@ main, header, .footer__info{
     margin-right: 1rem;
     -webkit-user-drag: none;
 }
+.popular__grid__card__name__subtitle, .accommodation__grid__card__name__subtitle, .user-search__subtitle, .user-info__paragraph {
+    font-size: var(--font-size-p);
+    margin: calc(var(--font-size-p)) 0 calc(var(--font-size-p)) 0;
+}
 .accommodation {
     background-color: #F2F2F2;
     display: flex;
     border-radius: 1.5rem;
     flex-direction: column;
     height: var(--height-block-accommodation-popular);
-    padding: 0 2rem;
+    padding: 0 var(--spacing);
 }
 .accommodation > a {
     text-decoration: none;
@@ -434,13 +496,13 @@ footer {
 }
 .footer__info > * {
     list-style: none;
-    line-height: 2rem;
+    line-height: var(--spacing);
 }
 @media only screen 
     and (min-width: 768px) 
     and (max-width: 1439px)  {
         main, header {
-            margin: 0 2rem 0 2rem;
+            margin: 0 var(--spacing) 0 var(--spacing);
         }
         .user-search {
             width: 50%;
@@ -453,7 +515,7 @@ footer {
             float: none;
             margin-left: 0;
             margin-bottom: 2.3rem;
-            padding-bottom: 2rem;
+            padding-bottom: var(--spacing);
             height: auto;
             width: auto;
         }
@@ -491,7 +553,7 @@ footer {
         }
         .accommodation {
             height: auto;
-            padding-bottom: 2rem;
+            padding-bottom: var(--spacing);
         }
         .activity__grid {
             grid-template-rows: repeat(1, 1fr);
@@ -500,6 +562,9 @@ footer {
             "highRecommendation1 Recommendation2"
             "Recommendation3 highRecommendation2"
             "Recommendation4 highRecommendation2";
+        }
+        .footer__info {
+            margin-left: var(--spacing);
         }
         .footer__info__about, .footer__info__accommodation, .footer__info__help {
             min-width: 10rem;
@@ -533,7 +598,7 @@ footer {
             }
             .footer__info {
                 justify-content: space-between;
-                margin-right: 2rem;
+                margin-right: var(--spacing);
             }
             .footer__info__about, .footer__info__accommodation, .footer__info__help {
                 width: auto;
@@ -547,9 +612,6 @@ footer {
             position: relative;
             left: 1.3rem;
             top: .5rem;
-        }
-        main, header, .footer__info{
-            width: 100%;
         }
         header {
             flex-direction: column;
@@ -618,7 +680,7 @@ footer {
             margin-bottom: 2.3rem;
             width: 100%;
             height: auto;
-            padding-bottom: 2rem;
+            padding-bottom: var(--spacing);
             box-sizing: border-box;
         }
         .popular__grid__card {
@@ -651,10 +713,10 @@ footer {
             background-color: white;
         }
         .accommodation {
-            margin: 0 2rem 0 2rem;
+            margin: 0 var(--spacing) 0 var(--spacing);
         }
         .activity {
-            margin: 0 1rem 0 1rem;
+            margin: 0 calc(var(--spacing) / 2) 0 calc(var(--spacing) / 2);
         }
         .activity__grid {
             grid-template-rows: repeat(1, 1fr);
@@ -671,6 +733,7 @@ footer {
         }
         .footer__info {
             flex-direction: column;
+            margin-left: var(--spacing);
         }
         .footer__info__about, .footer__info__accommodation, .footer__info__help {
             width: auto;
