@@ -3,11 +3,11 @@
     <head>
         <title>Reservia</title>
         <meta charset="UTF-8">
-        <meta name= "viewport" content="width=device-width">
-        <link rel="stylesheet" href="styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/71d199652e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
             <nav class="user-navigation">
                 <a class="user-navigation__select user-navigation__select--accommodation-mobile" href="#accommodation">Hébergements</a>
                 <a class="user-navigation__select user-navigation__select--activity-mobile" href="#activity">Activités</a>
-                <a class="user-navigation__sign" href="#">S'inscrire</a>
+                <a class="user-navigation__select user-navigation__select--active" href="#">S'inscrire</a>
             </nav>
         </header>
         <main>
@@ -35,35 +35,35 @@
                 <div class="user-filter">
                     <h3 class="user-filter__title">Filtres</h3>
                     <div class="user-filter__filter-container">
-                        <label class="user-filter__filter-container__switch-eco">
-                            <span class="user-filter__filter-container__switch-eco__subtitle">Économique</span>
-                            <input class="user-filter__filter-container__switch-eco__input-checkbox" type="checkbox">
-                            <span class="user-filter__filter-container__switch-eco__slider">
-                                <span class="user-filter__filter-container__switch-eco__slider__subtitle--after user-filter__filter-container__switch-eco__slider__subtitle">Économique</span>
+                        <label class="user-filter__filter-container__switch">
+                            <span class="user-filter__filter-container__switch__subtitle">Économique</span>
+                            <input class="user-filter__filter-container__switch__input-checkbox" type="checkbox">
+                            <span class="user-filter__filter-container__switch__slider">
+                                <span class="user-filter__filter-container__switch__slider__subtitle--after user-filter__filter-container__switch__slider__subtitle">Économique</span>
                             </span>
                             <i class="fas fa-money-bill-wave fa-fw"></i>
                         </label>
-                        <label class="user-filter__filter-container__switch-fam">
-                            <span class="user-filter__filter-container__switch-fam__subtitle">Familial</span>
-                            <input class="user-filter__filter-container__switch-fam__input-checkbox" type="checkbox">
-                            <span class="user-filter__filter-container__switch-fam__slider">
-                                <span class="user-filter__filter-container__switch-fam__slider__subtitle--after user-filter__filter-container__switch-fam__slider__subtitle">Familial</span>
+                        <label class="user-filter__filter-container__switch--fam user-filter__filter-container__switch">
+                            <span class="user-filter__filter-container__switch__subtitle">Familial</span>
+                            <input class="user-filter__filter-container__switch__input-checkbox" type="checkbox">
+                            <span class="user-filter__filter-container__switch__slider">
+                                <span class="user-filter__filter-container__switch__slider__subtitle--after user-filter__filter-container__switch__slider__subtitle">Familial</span>
                             </span>
                             <i class="fas fa-child fa-fw"></i>
                         </label>
-                        <label class="user-filter__filter-container__switch-rom">
-                            <span class="user-filter__filter-container__switch-rom__subtitle">Romantique</span>
-                            <input class="user-filter__filter-container__switch-rom__input-checkbox" type="checkbox">
-                            <span class="user-filter__filter-container__switch-rom__slider">
-                                <span class="user-filter__filter-container__switch-rom__slider__subtitle--after user-filter__filter-container__switch-rom__slider__subtitle">Romantique</span>
+                        <label class="user-filter__filter-container__switch">
+                            <span class="user-filter__filter-container__switch__subtitle">Romantique</span>
+                            <input class="user-filter__filter-container__switch__input-checkbox" type="checkbox">
+                            <span class="user-filter__filter-container__switch__slider">
+                                <span class="user-filter__filter-container__switch__slider__subtitle--after user-filter__filter-container__switch__slider__subtitle">Romantique</span>
                             </span>
                             <i class="fas fa-heart fa-fw"></i>
                         </label>
-                        <label class="user-filter__filter-container__switch-ani">
-                            <span class="user-filter__filter-container__switch-ani__subtitle">Animaux autorisés</span>
-                            <input class="user-filter__filter-container__switch-ani__input-checkbox" type="checkbox">
-                            <span class="user-filter__filter-container__switch-ani__slider">
-                                <span class="user-filter__filter-container__switch-ani__slider__subtitle--after user-filter__filter-container__switch-ani__slider__subtitle">Animaux autorisés</span>
+                        <label class="user-filter__filter-container__switch--ani user-filter__filter-container__switch">
+                            <span class="user-filter__filter-container__switch__subtitle">Animaux autorisés</span>
+                            <input class="user-filter__filter-container__switch__input-checkbox" type="checkbox">
+                            <span class="user-filter__filter-container__switch__slider">
+                                <span class="user-filter__filter-container__switch__slider__subtitle--after user-filter__filter-container__switch__slider__subtitle">Animaux autorisés</span>
                             </span>
                             <i class="fas fa-dog fa-fw"></i>
                         </label>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="popular__grid">
                     <a class="popular__grid__card" href="#">
-                        <img class="popular__grid__card__img popular__grid__card__img--tablet" src="assets/images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="">
+                        <img class="popular__grid__card__img" src="assets/images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="">
                         <div class="popular__grid__card__name">
                             <h3 class="popular__grid__card__name__title">Hôtel Le soleil du matin</h3>
                             <p class="popular__grid__card__name__subtitle">Nuit à partir de 128<strong>€</strong></p>
